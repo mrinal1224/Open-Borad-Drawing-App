@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script defer src="script.js"></script>
+    <script  src="https://cdn.rawgit.com/magicien/undo-canvas/v0.1.3/undo-canvas.js"></script>
+    <title>Open Board Drawing App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+
+  <div class="navbar">
+      <div>
+        <button id="clear" class="btn fas fa-broom"></button>
+        <button id="save" class="btn fas fa-save"></button>
+
+      </div>
+  
+  <div>
+        <button id="decrease" class="btn-sm fas fa-minus"></button>
+        <span id='size' style="color: black;">10</span>
+        <button id="increase" class="btn-sm fas fa-plus"></button>
+        
+  </div>
+
+  <div>
+      <input type='color' id='color'>
+  </div>
+
+ 
+
+
+  <div>
+    <button id="zoom-in" class="btn-sm fas fa-search-plus"></button>
+    <button id="zoom-out" class="btn-sm fas fa-search-minus"></button>
+  </div>
+
+<div>
+    <button id="undo" class="btn-sm fas fa-undo"></button>
+    <button id="redo" class="btn-sm fas fa-redo"></button>
+</div>
+
+<div>
+    <button id="notes" class="btn fas fa-sticky-note"></button>
+</div>
+
+  
+  </div>
+
+  <canvas id='canvas' width='1600' height="1600"></canvas>
+
+
+    
+</body>
+</html>
