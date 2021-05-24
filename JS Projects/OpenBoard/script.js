@@ -12,6 +12,10 @@ const zoomInBtn = document.getElementById('zoom-in')
 const zoomOutBtn = document.getElementById('zoom-out')
 const saveBtn = document.getElementById('undo')
 const notes = document.getElementById('notes')
+const eraserBtn = document.getElementById('erase')
+let clickBtn = false
+
+let zoomLevel= 1
 
 
 const ctx = canvas.getContext('2d')
@@ -22,6 +26,7 @@ let y
 let isPressed = false
 let size=10
 let color = 'black'
+let eraserColor = "white"
 
 
 
@@ -45,15 +50,13 @@ function drawLine(x1 , y1 , x2 , y2){
 }
 
 
+
+
+
 function updateSizeOnScreen(){
  sizeEle.innerText = size
 }
 
-function zoomin() {
-            let canvasEl= document.getElementById("canvas");
-            let currWidth = canvasEl.width;
-            canvasEl.style.width = (currWidth + 100) + "px";
-        }
 
 
 
@@ -86,6 +89,12 @@ canvas.addEventListener('mouseup' , (e)=>{
 
 colorEle.addEventListener('change' , (e)=> color = e.target.value)
 
+eraserBtn.addEventListener('click' , (e)=> 
+{
+    color='white'
+    eraserBtn.classList.add('.btn:hover')
+})  
+
 
 increaseBtn.addEventListener('click' , ()=>{
  size+=2
@@ -117,7 +126,14 @@ redoBtn.addEventListener('mousedown' ,(e)=>{
   ctx.redo()
 })
 
-zoomInBtn.addEventListener('click', zoomin())
+
+zoomInBtn.addEventListener("click", function () {
+    if (zoomLevel < 3) {
+        zoomLevel += 0.2;
+        canvas.style.transform = `scale(${zoomLevel})`;
+    }
+})
+
 
 
 

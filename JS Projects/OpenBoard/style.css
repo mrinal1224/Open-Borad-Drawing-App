@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+
+
+
+
 /* Global Styles */
 :root {
   --primary-color: #dc3545;
@@ -297,7 +301,7 @@ img {
 }
 
 .btn:hover {
-  opacity: 0.8;
+  opacity: 2.0;
 }
 
 .bg-light,
@@ -418,3 +422,5 @@ table th {
     justify-content: center;
   }
 }
+
+
