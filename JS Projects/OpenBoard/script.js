@@ -13,6 +13,7 @@ const zoomOutBtn = document.getElementById('zoom-out')
 const saveBtn = document.getElementById('undo')
 const notes = document.getElementById('notes')
 const eraserBtn = document.getElementById('erase')
+const body = document.body
 let clickBtn = false
 
 let zoomLevel= 1
@@ -93,6 +94,7 @@ eraserBtn.addEventListener('click' , (e)=>
 {
     color='white'
     eraserBtn.classList.add('.btn:hover')
+    body.style.cursor='not-allowed'
 })  
 
 
@@ -116,6 +118,9 @@ updateSizeOnScreen()
 
 
 clearBtn.addEventListener('click',  ()=> ctx.clearRect(0,0 , canvas.width , canvas.height))
+clearBtn.addEventListener('click' , ()=>{
+  body.style.cursor="url('cursors\Pen-Red-icon.png'), auto"
+})
 
 
 undoBtn.addEventListener('mousedown' ,(e)=>{
@@ -127,12 +132,6 @@ redoBtn.addEventListener('mousedown' ,(e)=>{
 })
 
 
-zoomInBtn.addEventListener("click", function () {
-    if (zoomLevel < 3) {
-        zoomLevel += 0.2;
-        canvas.style.transform = `scale(${zoomLevel})`;
-    }
-})
 
 
 
